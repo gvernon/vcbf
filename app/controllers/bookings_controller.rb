@@ -1,4 +1,7 @@
 class BookingsController < ApplicationController
+
+  before_filter :authenticate
+
   # GET /bookings
   # GET /bookings.xml
   def index
