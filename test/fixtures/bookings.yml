@@ -1,0 +1,65 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  ref: MyString
+  fname: MyString
+  lname: MyString
+  dept: MyString
+  address: MyString
+  email: MyString
+  telephone: MyString
+  date: 2011-07-12
+  start: 2011-07-12 14:02:55
+  end: 2011-07-12 14:02:55
+  ppt: MyString
+  name1: MyString
+  chair1: MyString
+  part1: 1
+  room1: MyString
+  name2: MyString
+  chair2: MyString
+  part2: 1
+  room2: MyString
+  name3: MyString
+  chair3: MyString
+  part3: 1
+  room3: MyString
+  name4: MyString
+  chair4: MyString
+  part4: 1
+  room4: MyString
+  other: MyString
+  approved: MyString
+  notes: MyString
+
+two:
+  ref: MyString
+  fname: MyString
+  lname: MyString
+  dept: MyString
+  address: MyString
+  email: MyString
+  telephone: MyString
+  date: 2011-07-12
+  start: 2011-07-12 14:02:55
+  end: 2011-07-12 14:02:55
+  ppt: MyString
+  name1: MyString
+  chair1: MyString
+  part1: 1
+  room1: MyString
+  name2: MyString
+  chair2: MyString
+  part2: 1
+  room2: MyString
+  name3: MyString
+  chair3: MyString
+  part3: 1
+  room3: MyString
+  name4: MyString
+  chair4: MyString
+  part4: 1
+  room4: MyString
+  other: MyString
+  approved: MyString
+  notes: MyString

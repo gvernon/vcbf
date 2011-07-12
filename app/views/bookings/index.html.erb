@@ -1,0 +1,83 @@
+<h1>Listing bookings</h1>
+
+<table>
+  <tr>
+    <th>Ref</th>
+    <th>Fname</th>
+    <th>Lname</th>
+    <th>Dept</th>
+    <th>Address</th>
+    <th>Email</th>
+    <th>Telephone</th>
+    <th>Title</th>
+    <th>Date</th>
+    <th>Start</th>
+    <th>End</th>
+    <th>Ppt</th>
+    <th>Name1</th>
+    <th>Chair1</th>
+    <th>Part1</th>
+    <th>Room1</th>
+    <th>Name2</th>
+    <th>Chair2</th>
+    <th>Part2</th>
+    <th>Room2</th>
+    <th>Name3</th>
+    <th>Chair3</th>
+    <th>Part3</th>
+    <th>Room3</th>
+    <th>Name4</th>
+    <th>Chair4</th>
+    <th>Part4</th>
+    <th>Room4</th>
+    <th>Other</th>
+    <th>Approved</th>
+    <th>Notes</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @bookings.each do |booking| %>
+  <tr>
+    <td><%= booking.ref %></td>
+    <td><%= booking.fname %></td>
+    <td><%= booking.lname %></td>
+    <td><%= booking.dept %></td>
+    <td><%= booking.address %></td>
+    <td><%= booking.email %></td>
+    <td><%= booking.telephone %></td>
+    <td><%= booking.title %></td>
+    <td><%= booking.date %></td>
+    <td><%= booking.start %></td>
+    <td><%= booking.end %></td>
+    <td><%= booking.ppt %></td>
+    <td><%= booking.name1 %></td>
+    <td><%= booking.chair1 %></td>
+    <td><%= booking.part1 %></td>
+    <td><%= booking.room1 %></td>
+    <td><%= booking.name2 %></td>
+    <td><%= booking.chair2 %></td>
+    <td><%= booking.part2 %></td>
+    <td><%= booking.room2 %></td>
+    <td><%= booking.name3 %></td>
+    <td><%= booking.chair3 %></td>
+    <td><%= booking.part3 %></td>
+    <td><%= booking.room3 %></td>
+    <td><%= booking.name4 %></td>
+    <td><%= booking.chair4 %></td>
+    <td><%= booking.part4 %></td>
+    <td><%= booking.room4 %></td>
+    <td><%= booking.other %></td>
+    <td><%= booking.approved %></td>
+    <td><%= booking.notes %></td>
+    <td><%= link_to 'Show', booking %></td>
+    <td><%= link_to 'Edit', edit_booking_path(booking) %></td>
+    <td><%= link_to 'Destroy', booking, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Booking', new_booking_path %>

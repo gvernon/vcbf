@@ -1,0 +1,141 @@
+<%= form_for(@booking) do |f| %>
+  <% if @booking.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@booking.errors.count, "error") %> prohibited this booking from being saved:</h2>
+
+      <ul>
+      <% @booking.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :ref %><br />
+    <%= f.text_field :ref %>
+  </div>
+  <div class="field">
+    <%= f.label :fname %><br />
+    <%= f.text_field :fname %>
+  </div>
+  <div class="field">
+    <%= f.label :lname %><br />
+    <%= f.text_field :lname %>
+  </div>
+  <div class="field">
+    <%= f.label :dept %><br />
+    <%= f.text_field :dept %>
+  </div>
+  <div class="field">
+    <%= f.label :address %><br />
+    <%= f.text_field :address %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :telephone %><br />
+    <%= f.text_field :telephone %>
+  </div>
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :date %><br />
+    <%= f.date_select :date %>
+  </div>
+  <div class="field">
+    <%= f.label :start %><br />
+    <%= f.time_select :start %>
+  </div>
+  <div class="field">
+    <%= f.label :end %><br />
+    <%= f.time_select :end %>
+  </div>
+  <div class="field">
+    <%= f.label :ppt %><br />
+    <%= f.text_field :ppt %>
+  </div>
+  <div class="field">
+    <%= f.label :name1 %><br />
+    <%= f.text_field :name1 %>
+  </div>
+  <div class="field">
+    <%= f.label :chair1 %><br />
+    <%= f.text_field :chair1 %>
+  </div>
+  <div class="field">
+    <%= f.label :part1 %><br />
+    <%= f.text_field :part1 %>
+  </div>
+  <div class="field">
+    <%= f.label :room1 %><br />
+    <%= f.text_field :room1 %>
+  </div>
+  <div class="field">
+    <%= f.label :name2 %><br />
+    <%= f.text_field :name2 %>
+  </div>
+  <div class="field">
+    <%= f.label :chair2 %><br />
+    <%= f.text_field :chair2 %>
+  </div>
+  <div class="field">
+    <%= f.label :part2 %><br />
+    <%= f.text_field :part2 %>
+  </div>
+  <div class="field">
+    <%= f.label :room2 %><br />
+    <%= f.text_field :room2 %>
+  </div>
+  <div class="field">
+    <%= f.label :name3 %><br />
+    <%= f.text_field :name3 %>
+  </div>
+  <div class="field">
+    <%= f.label :chair3 %><br />
+    <%= f.text_field :chair3 %>
+  </div>
+  <div class="field">
+    <%= f.label :part3 %><br />
+    <%= f.text_field :part3 %>
+  </div>
+  <div class="field">
+    <%= f.label :room3 %><br />
+    <%= f.text_field :room3 %>
+  </div>
+  <div class="field">
+    <%= f.label :name4 %><br />
+    <%= f.text_field :name4 %>
+  </div>
+  <div class="field">
+    <%= f.label :chair4 %><br />
+    <%= f.text_field :chair4 %>
+  </div>
+  <div class="field">
+    <%= f.label :part4 %><br />
+    <%= f.text_field :part4 %>
+  </div>
+  <div class="field">
+    <%= f.label :room4 %><br />
+    <%= f.text_field :room4 %>
+  </div>
+  <div class="field">
+    <%= f.label :other %><br />
+    <%= f.text_field :other %>
+  </div>
+  <div class="field">
+    <%= f.label :approved %><br />
+    <%= f.text_field :approved %>
+  </div>
+  <div class="field">
+    <%= f.label :notes %><br />
+    <%= f.text_field :notes %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
