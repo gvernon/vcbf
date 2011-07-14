@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110712140538) do
+ActiveRecord::Schema.define(:version => 20110713150720) do
 
   create_table "bookings", :force => true do |t|
     t.string   "ref"
@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(:version => 20110712140538) do
     t.string   "notes"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "pptLocs"
   end
 
 end
