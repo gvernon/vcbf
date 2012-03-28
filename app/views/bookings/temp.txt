@@ -1,0 +1,88 @@
+<% @bookings.each do |booking| %>
+  <%  if (defined? depts[booking.dept]) %>
+  <%    c = depts[booking.dept] + 1 %>
+  <%    depts[booking.dept] = c %>
+  <%  else  %>
+  <%     depts[booking.dept] = 1 %>
+  <%  end %>
+
+<% end %>
+
+
+<%= javascript_include_tag :defaults %>
+<% depts = {"dept" => 0 } %>
+
+<% @bookings.each do |booking| %>
+  <%  if depts[booking.dept] != nil %>
+  <%     depts[booking.dept] = depts[booking.dept] + 1%>
+  <%  else %>
+  <%    depts[booking.dept] = 1%>
+  <%  end %>
+  <%   %>
+<% end %>
+  
+   
+<table>
+  <tr><th>Dept</th><th>Bookings</th><th>Total Hours</th><tr>
+  <% depts.each do |dept,count| %>
+  <tr>
+    <td><%= dept %></td>
+    <td><%= count %></td>
+    <td><%= hours %></td>
+  </tr>
+  <% end %>
+
+</table>
+
+<%= javascript_include_tag :defaults %>
+<% class SessionCount %>
+  <% attr_accessor :count, :hours %>
+<% end %>
+<% count = SessionCount.new( 0, 0) %>
+<% depts = { "Information and Learning Services Central (Information and Learning Services)" => :count } %>
+
+<% @bookings.each do |booking| %>
+  <%  if depts[booking.dept] != nil %>
+  <%     count = depts[boking.dept] %>
+  <%     count.count = count.count + 1 %>
+  <%     count.hours = count.hours + 1 %>
+  <%     depts[booking.dept] = count %>
+  <%  else %>
+  <%    count = Count.new (1, 1) %>
+  <%    depts[booking.dept] = count %>
+  <%  end %>
+<% end %>
+  
+   
+<table>
+  <tr><th>Dept</th><th>Bookings</th><th>Total Hours</th><tr>
+  <% depts.each do |name,count| %>
+  <tr>
+    <td><%= name %></td>
+    <td><%= count.count %></td>
+    <td><%= count.hours %></td>
+  </tr>
+  <% end %>
+
+</table>
+
+<% fname = "name1" %>
+<% fvalue = "fvalue1" %>
+
+<%= text_field :fname, :fvalue %>
+
+<div class="field">
+ <b>Report start: </b><%= date_select("start_date", "start_date")  %>
+ <b>Report end: </b><%= date_select("post", "end_date")  %>
+
+ </div>
+
+ 
+ <% start_date  = Date.new(2011, 8, 1) %>
+<% end_date = Date.new(2012, 7, 31) %> 
+
+
+
+  scope :rep_start, lambda { |startDate| where ('self.date > ?', startDate) }
+  scope :rep_end, lambda { |endDate| where('self.date < ?', endDate) }
+  

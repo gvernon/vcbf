@@ -5,6 +5,10 @@ R::Application.routes.draw do
   match '/help', :to => 'pages#help'
   match '/home', :to => 'pages#home'
 
+  match '/report', :to => 'bookings#report'
+  match '/reptest', :to => 'bookings#reptest'
+  match '/index2', :to => 'bookings#index2'
+  
   get "pages/home"
 
   get "pages/contact"
@@ -14,7 +18,7 @@ R::Application.routes.draw do
   get "pages/help"
 
   get "home/index"
-
+  
   resources :bookings
 
   # The priority is based upon order of creation:

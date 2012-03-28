@@ -1,0 +1,27 @@
+<div id="booking_list">
+<h1>Listing bookings</h1>
+
+<table>
+<% @bookings.each do |booking| %>
+  <tr class="<%= cycle('list_line_odd', 'list_line_even') %>" >
+    <td><%= booking.date %></td>
+    <td><%= booking.fname %> <%= booking.lname %></td>
+    <td><%= booking.start.strftime("%H:%M") %>-<%= booking.end.strftime("%H:%M") %></td>
+    <td><%= booking.title %></td>
+    <td><%= booking.name1 %><br />
+        <%= booking.name2 %><br />
+        <%= booking.name3 %><br />
+        <%= booking.name4 %></td>
+    <td><%= booking.notes %></td>
+
+    <td><%= link_to 'Show', booking %><br />
+        <%= link_to 'Edit', edit_booking_path(booking) %><br />
+        <%= link_to 'Destroy', booking, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+</div>
+
+<br />
+
+<%= link_to 'New Booking', new_booking_path %>

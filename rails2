@@ -1,0 +1,47 @@
+#!/bin/sh
+###
+# chkconfig: 2345 99 99
+# description: Manage second rails server for vcbf
+###
+#
+# Source networking configuration.
+. /etc/sysconfig/network
+
+# Check that networking is up.
+[ ${NETWORKING} = "no" ] && exit 0
+
+. /etc/init.d/functions
+
+RHOME=/dspace/www/vcbf/r
+
+[ -f $RHOME/run.sh ] || exit 0
+
+# See how we were called.
+case "$1" in
+  start)
+        echo -n "Starting Rails"
+        runuser -l -c "$RHOME/run.sh start >/dev/null" george && \
+        success "Starting Rails" || failure "Starting Rails"
+        echo
+        ;;
+
+  stop)
+
+        echo -n "Stopping Rails"
+        runuser -l -c "$RHOME/run.sh stop >/dev/null" george && \
+        success "Stopping Rails" || failure "Stopping Rails"
+        echo
+        ;;
+
+  restart|reload)
+        $0 stop
+        $0 start
+        ;;
+
+  *)
+        echo "Usage: rails {start|stop|restart}"
+        exit 1
+        ;;
+esac
+
+exit 0

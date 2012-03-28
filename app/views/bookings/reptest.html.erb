@@ -1,0 +1,48 @@
+
+<% dept_sess = { "Information and Learning Services Central (Information and Learning Services)" => 0 } %>
+<% dept_hours = { "Information and Learning Services Central (Information and Learning Services)" => 0 } %>
+
+<%= form_for(:booking) do |f| %>
+
+
+ <div class="field">
+    <%= f.label "Report from" %>: <%= f.date_select Booking.startDate %>
+    <%= f.label "Until" %>: <%= f.date_select :endDate, :default => { :year => 2012, :month => 7, :day => 31 } %>
+  </div>
+
+<% end %>
+
+
+<% results = Array.new %>
+<% @bookings.each do |booking| %> 
+<%   if  booking.date > booking.startDate %>
+<%      if booking.date < booking.endDate %>
+<%        results.push booking            %>
+<%      end   %>
+<%   end  %>                
+<% end %>
+
+
+<% results.each do |booking| %>
+  <%  duration = (booking.end - booking.start) / 3600 %>
+  <%  if dept_sess[booking.dept] != nil %>
+  <%     dept_sess[booking.dept] = dept_sess[booking.dept] + 1 %>
+  <%     dept_hours[booking.dept] = dept_hours[booking.dept] + duration %>
+  <%  else %>
+  <%    dept_sess[booking.dept] = 1 %>
+  <%    dept_hours[booking.dept] = duration %>
+  <%  end %>
+<% end %>
+  
+<br />  
+<table>
+  <tr><th>Department</th><th>Bookings</th><th>Total Hours</th><tr>
+  <% dept_sess.each do |name,count| %>
+  <tr>
+    <td><%= name %></td>
+    <td><%= count %></td>
+    <td><%= dept_hours[name] %></td>
+  </tr>
+  <% end %>
+
+</table>

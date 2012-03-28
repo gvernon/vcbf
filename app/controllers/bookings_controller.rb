@@ -83,4 +83,33 @@ class BookingsController < ApplicationController
       format.xml  { head :ok }
     end
   end
-end
+  
+  def report
+    @bookings = Booking.all
+
+    respond_to do |format|
+      format.html # report.html.erb
+      format.xml  { render :xml => @bookings }
+    end
+  end
+
+  def reptest
+    @bookings = Booking.all
+
+    respond_to do |format|
+      format.html # reptest.html.erb
+      format.xml  { render :xml => @bookings }
+    end
+  end
+
+    def index2
+    @bookings = Booking.all
+
+    respond_to do |format|
+      format.html # index2.html.erb
+      format.xml  { render :xml => @bookings }
+    end
+  end
+
+  
+ end
